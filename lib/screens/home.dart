@@ -8,7 +8,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Home Page')),
-      body: Padding(padding: EdgeInsets.all(8.0), child: TextArea()),
+      body: Padding(
+  padding: EdgeInsets.all(8.0),
+  child: Container(
+    height: 200, // Ensures the text area is visible
+    child: TextArea(),
+  ),
+),
     );
   }
 }
