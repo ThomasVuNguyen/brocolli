@@ -29,6 +29,12 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
+    
+    externalNativeBuild {
+            cmake {
+                arguments += listOf("-DANDROID_STL=c++_static")
+            }
+        }
 
     buildTypes {
         release {
