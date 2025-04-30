@@ -8,16 +8,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
+      body: Column(
         children: [
           Expanded(
-            flex: 1,
-            child: TextArea(),
-          ),
-          VerticalDivider(width: 1),
-          Expanded(
-            flex: 1,
-            child: CodeEditor(),
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: TextArea()),
+                VerticalDivider(width: 1),
+                Expanded(flex: 1, child: CodeEditor()),
+              ],
+            ),
           ),
         ],
       ),

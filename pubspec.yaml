@@ -17,6 +17,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_quill: ^11.4.0
   flutter_localization: ^0.3.2
+  flutter_js: ^0.8.2
 
 dev_dependencies:
   flutter_test:
