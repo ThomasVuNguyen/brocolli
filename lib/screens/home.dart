@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/code_editor.dart';
 import 'package:myapp/widgets/text_area.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,15 +7,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Home Page')),
-      body: Padding(
-  padding: EdgeInsets.all(8.0),
-  child: Container(
-    height: 200, // Ensures the text area is visible
-    child: TextArea(),
-  ),
-),
-    );
+    return Scaffold(body: Row(children: [TextArea(), CodeEditor()]));
   }
 }

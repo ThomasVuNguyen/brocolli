@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 
 class TextArea extends StatefulWidget {
-  const TextArea({Key? key}) : super(key: key);
+  const TextArea({super.key});
 
   @override
-  _TextAreaState createState() => _TextAreaState();
+  State<TextArea> createState() => _TextAreaState();
 }
 
 class _TextAreaState extends State<TextArea> {
-  final QuillController _controller = QuillController.basic();
+  QuillController _controller = QuillController.basic();
 
   @override
   void dispose() {
@@ -18,7 +18,26 @@ class _TextAreaState extends State<TextArea> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _controller = QuillController.basic();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return QuillEditor.basic(controller: _controller);
+    return Column(
+      children: [
+        QuillSimpleToolbar(
+          controller: _controller,
+          config: const QuillSimpleToolbarConfig(),
+        ),
+        Expanded(
+          child: QuillEditor.basic(
+            controller: _controller,
+            //config: const QuillEditorConfig(),
+          ),
+        ),
+      ],
+    );
   }
 }
