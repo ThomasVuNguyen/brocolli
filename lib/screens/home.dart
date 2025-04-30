@@ -7,6 +7,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Row(children: [TextArea(), CodeEditor()]));
+    return Scaffold(
+      body: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: TextArea(),
+          ),
+          VerticalDivider(width: 1),
+          Expanded(
+            flex: 1,
+            child: CodeEditor(),
+          ),
+        ],
+      ),
+    );
   }
 }
